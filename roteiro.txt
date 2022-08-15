@@ -6,7 +6,7 @@ react-flash-cards-v1 - roteiro
 (x) Reaproveitar componentes de projetos anteriores 
    sempre que possível
 
-() Criar FlashCardsPage e utilizar em App
+(x) Criar FlashCardsPage e utilizar em App
 () Criar componente FlashCard e testar em FlashCardsPage
 () Renderizar alguns FlashCards "na mão"
 () Utilizar flashcards.json como variável
