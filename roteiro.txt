@@ -7,19 +7,19 @@ react-flash-cards-v1 - roteiro
    sempre que possível
 
 (x) Criar FlashCardsPage e utilizar em App
-() Criar componente FlashCard e testar em FlashCardsPage
-() Renderizar alguns FlashCards "na mão"
-() Utilizar flashcards.json como variável
+(x) Criar componente FlashCard e testar em FlashCardsPage
+(x) Renderizar alguns FlashCards "na mão"
+(x) Utilizar flashcards.json como variável
 
-() Transformar os dados dos flashcards para que possuam
+(x) Transformar os dados dos flashcards para que possuam
    id e que fiquem ordenados pelo título
 
-() Renderizar a partir do array de flashcards com .map 
+(x) Renderizar a partir do array de flashcards com .map 
 
-() Criar estado no app para flashCards (Array) 
+(x) Criar estado no app para flashCards (Array) 
    e showDescription (Boolean)
 
-() Criar botão para embaralhar os cards com base em:
+(x) Criar botão para embaralhar os cards com base em:
    https://stackoverflow.com/a/12646864
 
 () Fazer com que todos os cards exibam o título 
