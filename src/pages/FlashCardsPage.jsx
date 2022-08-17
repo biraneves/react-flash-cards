@@ -1,6 +1,6 @@
-import { allFlashCards } from '../data/allFlashCards';
 import { helperShuffleArray } from '../helpers/arrayHelpers';
 import { useState } from 'react';
+import { apiGetAllFlashCards } from '../services/apiService';
 
 import FlashCard from '../components/FlashCard';
 import Header from '../components/Header';
@@ -10,7 +10,7 @@ import Button from '../components/Button';
 import RadioButton from '../components/RadioButton';
 
 export default function FlashCardsPage() {
-    const [allCards, setAllCards] = useState(allFlashCards);
+    const [allCards, setAllCards] = useState(apiGetAllFlashCards());
     const [radioButtonShowTitle, setRadioButtonShowTitle] = useState(true);
 
     function handleButtonClick() {
@@ -41,7 +41,7 @@ export default function FlashCardsPage() {
 
     return (
         <>
-            <Header>React Flash Cards - v.1</Header>
+            <Header>React Flash Cards - v.2</Header>
             <Main>
                 <div className='text-center mb-4'>
                     <Button onButtonClick={handleButtonClick}>Embaralhar cards</Button>
