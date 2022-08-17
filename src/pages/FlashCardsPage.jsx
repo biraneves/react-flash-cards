@@ -8,6 +8,7 @@ import Main from '../components/Main';
 import FlashCards from '../components/FlashCards';
 import Button from '../components/Button';
 import RadioButton from '../components/RadioButton';
+import Loading from '../components/Loading';
 
 export default function FlashCardsPage() {
     // Back end
@@ -61,6 +62,30 @@ export default function FlashCardsPage() {
         setStudyCards(updatedCards);
     }
 
+    let mainJsx = (
+        <div className='flex justify-center my-4'>
+            <Loading />
+        </div>
+    );
+
+    if (!loading) {
+        mainJsx = (<FlashCards>
+            {
+                studyCards.map(({id, title, description, showTitle}) => {
+                    return (
+                        <FlashCard 
+                            key={id}
+                            id={id}
+                            title={title}
+                            description={description}
+                            showFlashCardTitle={showTitle}
+                            onToggleFlashCard={handleToggleFlashCard} />
+                    );
+                })
+            }
+        </FlashCards>);
+    }
+
     return (
         <>
             <Header>React Flash Cards - v.2</Header>
@@ -84,21 +109,7 @@ export default function FlashCardsPage() {
                         Mostrar descrição
                     </RadioButton>
                 </div>
-                <FlashCards>
-                    {
-                        studyCards.map(({id, title, description, showTitle}) => {
-                            return (
-                                <FlashCard 
-                                    key={id}
-                                    id={id}
-                                    title={title}
-                                    description={description}
-                                    showFlashCardTitle={showTitle}
-                                    onToggleFlashCard={handleToggleFlashCard} />
-                            );
-                        })
-                    }
-                </FlashCards>
+                {mainJsx}
             </Main>
         </>
     );
