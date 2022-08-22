@@ -2,6 +2,7 @@ import { helperShuffleArray } from '../helpers/arrayHelpers';
 import { useEffect, useState } from 'react';
 import { apiCreateFlashCard, apiDeleteFlashCard, apiGetAllFlashCards, apiUpdateFlashCard } from '../services/apiService';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { ToastContainer, toast } from 'react-toastify';
 
 import FlashCard from '../components/FlashCard';
 import Header from '../components/Header';
@@ -13,6 +14,7 @@ import Loading from '../components/Loading';
 import Error from '../components/Error';
 
 import 'react-tabs/style/react-tabs.css';
+import 'react-toastify/dist/ReactToastify.css';
 import FlashCardItem from '../components/FlashCardItem';
 import FlashCardForm from '../components/FlashCardForm';
 
@@ -88,6 +90,7 @@ export default function FlashCardsPage() {
             // Front end
             setAllCards(allCards.filter(card => card.id !== cardId));
             setError('');
+            toast.success('Flashcard excluído com sucesso!');
         } catch (error) {
             setError(error.message);
         }
@@ -118,6 +121,7 @@ export default function FlashCardsPage() {
                 setAllCards([...allCards, newFlashCard]);
 
                 setError('');
+                toast.success(`Card "${title}" incluído com sucesso!`);
             } catch (error) {
                 setError(error.message);
             }
@@ -138,6 +142,7 @@ export default function FlashCardsPage() {
                 setCreateMode(true);
                 setSelectedTab(0);
                 setError('');
+                toast.success(`Card "${title}" alterado com sucesso!`);
             } catch (error) {
                 setError(error.message);
             }
@@ -228,6 +233,7 @@ export default function FlashCardsPage() {
 
     return (
         <>
+            <ToastContainer />
             <Header>React Flash Cards - v.2</Header>
             <Main>
                 {mainJsx}
