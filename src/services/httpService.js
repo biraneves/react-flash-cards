@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const axiosInstance = axios.create({ baseURL: 'http://localhost:3004', timeout: 10000 });
+const axiosInstance = axios.create({ baseURL: 'https://flashcards-biraneves.herokuapp.com/', timeout: 10000 });
 
 export async function read(url) {
     const { data } = await axiosInstance.get(url);
