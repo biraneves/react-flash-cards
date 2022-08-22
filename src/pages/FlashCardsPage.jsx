@@ -15,7 +15,6 @@ import Error from '../components/Error';
 import 'react-tabs/style/react-tabs.css';
 import FlashCardItem from '../components/FlashCardItem';
 import FlashCardForm from '../components/FlashCardForm';
-import { getNewId } from '../services/idService';
 
 export default function FlashCardsPage() {
     // Back end
